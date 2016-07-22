@@ -29,7 +29,7 @@ function error(err) {
 function foursquare_call(options){
     $.ajax({
         dataType: "JSON",
-        url: "search.php",
+        url:  "https://api.foursquare.com/v2/venues/search?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=40.7,-74&query=lunch",
         method: "POST",
         data: {
             //Geolocation restricted due to server being hosted on http
