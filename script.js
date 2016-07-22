@@ -298,11 +298,11 @@ function results_to_DOM (array,fav) {
       distance_container.append(i_distance, distance);
       rating_container.append(i_rating, rating);
       price_container.append(i_price, price);
-      prev_btn.append(i_left);
-      next_btn.append(i_right);
+      // prev_btn.append(i_left);
+      // next_btn.append(i_right);
       nav_button.append(nav_text);
-      prev_div.append(prev_btn);
-      next_div.append(next_btn);
+      // prev_div.append(prev_btn);
+      // next_div.append(next_btn);
       nav_div.append(nav_button);
       btn_div.append(nav_div);
       addressDiv.append(street, city_state_zip, phone);
