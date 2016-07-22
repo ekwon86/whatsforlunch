@@ -30,7 +30,7 @@ function foursquare_call(){
     $.ajax({
         dataType: "JSON",
         url: "https://api.foursquare.com/v2/venues/search?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=33.636234,-117.739449&query=lunch",
-        method: "GET",
+        method: "POST",
         data: {
             //Geolocation restricted due to server being hosted on http
             latitude: coordinates.latitude,
