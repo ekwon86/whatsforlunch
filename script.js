@@ -26,10 +26,10 @@ function error(err) {
   console.warn("Error(" + err.code + "):" + err.message);
 }
 //function for calling the php page which returns the modified foursquare data
-function foursquare_call(){
+function foursquare_call(options){
     $.ajax({
         dataType: "JSON",
-        url: "https://api.foursquare.com/v2/venues/search?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=33.636234,-117.739449&query=lunch",
+        url: "search.php",
         method: "POST",
         data: {
             //Geolocation restricted due to server being hosted on http
@@ -451,7 +451,7 @@ function click_circle() {
   //click handler that triggers the expanding circle animation on the landing page
   $('.circle').on('click', function() {
     //foursquare_call function is called and random is inserted into the query
-    foursquare_call();
+    foursquare_call("random");
     var $this = $(this);
     //applies css 'z-index: 2', removes the class 'expanded', and also applies css 'z-index: 1'
     $this.css('z-index', 2).removeClass('expanded').css('z-index', 1);
