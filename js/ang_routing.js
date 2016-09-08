@@ -14,9 +14,13 @@ app.config(function($routeProvider){
            templateUrl: 'results.html',
            controller: 'resultsCtrl'
        })
-       .when('/selection', {
-           templateUrl: 'selection.html',
-           controller: 'selectionCtrl'
+       .when('/about', {
+           templateUrl: 'about.html',
+           controller: 'aboutCtrl'
+       })
+       .when('/contact', {
+           templateUrl: 'contact.html',
+           controller: 'contactCtrl'
        })
        .otherwise({
            redirectTo: '/'
@@ -26,12 +30,19 @@ app.config(function($routeProvider){
 
 app.controller('mainCtrl', function($scope){
 });
+
 app.controller('landingCtrl', function($scope){
-   click_circle();
+    click_circle();
 });
 
 app.controller('resultsCtrl', function($scope){
+    
 });
 
-app.controller('selectionCtrl', function($scope){
+app.controller('aboutCtrl', function($scope){
+
+});
+
+app.controller('contactCtrl', function($scope){
+
 });

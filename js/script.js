@@ -44,8 +44,7 @@ function click_circle() {
 function foursquare_call(crd){
     $.ajax({
         dataType: "JSON",
-        url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=33.87, -117.92&venuePhotos=1&query=lunch",
-        // url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=" + coordinates.latitude + "," + coordinates.longitude +"&venuePhotos=1&query=lunch",
+        url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=33.8121,-117.9190&venuePhotos=1&query=lunch",
         method: "GET",
         data: {
             latitude: coordinates.latitude,
@@ -87,6 +86,7 @@ function fourSquareReturn(response){
             // else {
             //     fourSquareObj.price = "Unknown";
             // }
+            fourSquareObj.checkins = response.response.groups[0].items[x].venue.stats.checkinsCount;
             fourSquareObj.website =  response.response.groups[0].items[x].venue.url;
             fourSquareObj.popularity = response.response.groups[0].items[x].summary;
             fourSquareObj.phone = response.response.groups[0].items[x].venue.contact.formattedPhone;
@@ -97,7 +97,6 @@ function fourSquareReturn(response){
             fourSquareObj.zip = response.response.groups[0].items[x].venue.location.postalCode;
             fourSquareObj.lat = response.response.groups[0].items[x].venue.location.lat;
             fourSquareObj.lng = response.response.groups[0].items[x].venue.location.lng;
-            // fourSquareObj.price = response.response.groups[0].items[x].venue.price.message;
             fourSquareObj.rating = response.response.groups[0].items[x].venue.rating;
             restauraunts.push(fourSquareObj);
         }
@@ -201,9 +200,9 @@ function results_to_DOM (array) {
         var i_price = $("<i>").addClass("fa fa-usd");
         var price = $("<p>").text(array[i].price);
         /** HOURS **/
-        var i_hours_container = $('<div>').addClass("info-container col-xs-3");
+        var i_hours_container = $('<div>').addClass("info-container hours col-xs-3");
         var i_hours = $("<i>").addClass("fa fa-clock-o");
-        var i_hours_tag = $("<p>").text(array[i].hours).addClass("info-content");
+        var i_hours_tag = $("<p>").text(array[i].hours).addClass("info-content hours");
         /** URL **/
         var i_url_container = $('<div>').addClass("info-container col-xs-3");
         var i_url = $("<i>").addClass("fa fa-globe");
@@ -214,9 +213,9 @@ function results_to_DOM (array) {
         /** POPULARITY **/
         var i_popularity_container = $('<div>').addClass("info-container col-xs-3");
         var i_popularity = $("<i>").addClass("fa fa-foursquare");
-        var i_popularity_tag = $("<p>").text("Popularity");
+        var i_popularity_tag = $("<p>").text("Check-Ins");
         var popularity_container = $('<div>').addClass("info-container col-xs-9");
-        var popularity = $("<p>").text(array[i].popularity + ". " + array[i].checkins + " Foursquare user" +" check-ins and counting!").addClass("info-content");
+        var popularity = $("<p>").text(array[i].checkins + " Foursquare user" +" check-ins and counting!").addClass("info-content");
         /** TIPS **/
         var i_tips_container = $('<div>').addClass("info-container col-xs-3");
         var i_tips = $("<i>").addClass("fa fa-thumbs-o-up");
@@ -228,7 +227,7 @@ function results_to_DOM (array) {
         var i_category = $("<i>").addClass("fa fa-tags");
         var i_category_tag= $("<p>").text("Category");
         var category_container = $('<div>').addClass("info-container col-xs-9");
-        var category = $("<p>").text(array[i].category_1).addClass("info-content");
+        var category = $("<p>").text(array[i].category_1).addClass("info-content categories");
         /** ETA **/
         // var eta_container = $("<div>").addClass("col-xs-3 info-container");
         // var i_eta = $("<i>").addClass("fa fa-dot-circle-o");
@@ -289,9 +288,9 @@ function results_to_DOM (array) {
 
         div.append (name, img, addressDiv, moreInfoDiv, btn_div);
 
-        
+
         $("#results-page").append(div.attr("id","card" + i).css({
-            top: 70 + top_position + window_height + "px",
+            top: 90 + top_position + window_height + "px",
             'z-index': "+"+z_index
         }));
 

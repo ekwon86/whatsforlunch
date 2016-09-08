@@ -28,6 +28,29 @@ button:focus {
     outline: 0;
 }
 
+.main_nav {
+    text-align: center;
+    padding: 0;
+}
+
+.main_nav > li {
+    width: 100%;
+    list-style-type: none;
+    display: inline;
+    padding: 2em;
+}
+
+a:link {
+    font-size: 1em;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s ease;
+}
+
+a:hover {
+    color: #55acee;
+}
+
 #lunch_heading {
     font-size: 30px;
     color: white;
@@ -197,7 +220,8 @@ button:focus {
     position: absolute !important;
     height: 86%;
     width: 90%;
-    position: relative;
+    top: 85px;
+    /*position: relative;*/
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
@@ -233,8 +257,8 @@ button:focus {
     width: 94%;
     margin-top: 3%;
     display: inline-block;
-    background-color: rgba(255,255,255,0.8);
-    box-shadow: 0 1px 0px rgba(0,0,0,0.1), 0 3px 5px rgba(0,0,0,0.08);
+    /*background-color: rgba(255,255,255,0.8);*/
+    /*box-shadow: 0 1px 0px rgba(0,0,0,0.1), 0 3px 5px rgba(0,0,0,0.08);*/
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -262,7 +286,7 @@ button:focus {
 }
 
 .navigation-button {
-    margin-top: 50%;
+    margin-top: 30%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -279,7 +303,7 @@ button:focus {
 
 .next-button,
 .prev-button {
-    margin-top: 50%;
+    margin-top: 30%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -404,7 +428,18 @@ a {
     }
 
     .info-container > p {
-        font-size: 11px;
+        font-size: 70%;
+    }
+
+    .hours >  p {
+        font-size: 50%  !important;
+        padding: 0 1px;
+    }
+
+    .categories > p {
+        position: relative !important;;
+        top: 50% !important;;
+        transform: translate(0%,-50%) !important;;
     }
 
     .info-container > i {
