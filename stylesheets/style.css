@@ -183,6 +183,14 @@ a:hover {
     word-wrap: break-word;
 }
 
+#disclaimer {
+    position: absolute;
+    bottom: 4vh;
+    padding: 0 2vw;
+    color: #f3ff00;
+
+}
+
 /**************************************  MEDIA QUERY   **************************************************/
 /*@media screen and (max-width: 800px) {*/
 /*@media screen and (max-width: 800px) {*/
@@ -337,7 +345,7 @@ a:hover {
 }
 
 .navigation-button {
-    margin-top: 30%;
+    /*margin-top: 30%;*/
     position: relative;
     top: 50%;
     left: 50%;
@@ -354,7 +362,7 @@ a:hover {
 
 .next-button,
 .prev-button {
-    margin-top: 30%;
+    /*margin-top: 30%;*/
     position: relative;
     top: 50%;
     left: 50%;
