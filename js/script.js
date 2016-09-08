@@ -24,6 +24,7 @@ function error(err) {
 function click_circle() {
     $('.circle').on('click', function() {
         $(".landing-heading").hide();
+        $("#disclaimer").hide();
         foursquare_call(coordinates);
         var $this = $(this);
         $this.css('z-index', 2).removeClass('expanded').css('z-index', 1);

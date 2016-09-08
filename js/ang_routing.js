@@ -37,6 +37,7 @@ app.controller('landingCtrl', function($scope){
     $('#go-home').on('click', function() {
         document.body.style.backgroundColor = "#00aaff";
         $('.landing-heading').show();
+        $('#disclaimer').show();
     });
 
     click_circle();
