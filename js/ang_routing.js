@@ -29,9 +29,16 @@ app.config(function($routeProvider){
 
 
 app.controller('mainCtrl', function($scope){
+
 });
 
 app.controller('landingCtrl', function($scope){
+
+    $('#go-home').on('click', function() {
+        document.body.style.backgroundColor = "#00aaff";
+        $('.landing-heading').show();
+    });
+
     click_circle();
 });
 
