@@ -44,7 +44,8 @@ function click_circle() {
 function foursquare_call(crd){
     $.ajax({
         dataType: "JSON",
-        url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=" + coordinates.latitude + "," + coordinates.longitude +"&venuePhotos=1&query=lunch",
+        url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=33.87, -117.92&venuePhotos=1&query=lunch",
+        // url: "https://api.foursquare.com/v2/venues/explore?client_id=BJ55LPF34FXTMHV4VOW0L0VMAUV4MYG2VK3JC33ELWU2KOXZ&client_secret=KNMJ3JKCNBI4AUWZNHPLZBQZSMEQTURPQW0EGS4AKOO2TM3X&v=20130815&ll=" + coordinates.latitude + "," + coordinates.longitude +"&venuePhotos=1&query=lunch",
         method: "GET",
         data: {
             latitude: coordinates.latitude,
